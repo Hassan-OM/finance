@@ -547,6 +547,7 @@ const I = {
     auto_saved: '{n} new transactions added from SMS', auto_review: '{n} SMS need a quick check in Add', sa_title: 'iPhone SMS automation', sa_sub: 'Bank SMS are added automatically by an iPhone Shortcut. Use these values when you set it up.', sa_show: 'Show my Shortcut settings', sa_new: 'Make a new key', sa_url: 'URL', sa_headers: 'Headers', sa_body: 'Request body (JSON)', copy: 'Copy',
     backup: 'Backup', backup_sub: 'Download all your data as a file, or restore from one. Keep a copy somewhere safe.', export_file: 'Download backup', import_file: 'Restore from file', imported: '{n} items restored', account: 'Account', sign_out: 'Sign out', data_sub_sa: 'Stored in your own Supabase database; only your account can read it.',
     due_now: 'Due this cycle', due_now_sub: 'Tick off anything you have already paid so it is not counted twice.', paid_q_title: 'Already paid?', paid_q_sub: 'You updated a balance. Tick the payments that are already included in it, so they are not counted twice.', mark_selected: 'Mark selected as paid', skip: 'Skip', marked: 'Marked as paid', paid_btn: 'Paid',
+    card_alert: 'New purchase on {c}: {v} SAR at {m} ({d}). This adds to what you owe. Pay with SNB instead.', card_alert_title: 'Credit card used',
     pay_title: 'Mark as paid', paid_with: 'Paid with', record_tx: 'Add it as a transaction (updates that card\'s balance)', record_hint: 'Untick if you already updated the card balance by hand. If the bank SMS arrives later it is merged, not added twice.', merged: 'Matches a payment you ticked off', plan_budgets: 'Use my plan\'s budgets', plan_budgets_done: 'Budgets set from your plan', combine: 'Combine', combine_title: 'Count together in one budget', combine_sub: 'Spending in the ticked categories counts toward this budget.', counted_in: 'Counted in {c}',
     move_to: 'Move to my card (not spending)', pay_card: 'Payment to {c}', b_ok: 'On track', b_near: 'Near limit', b_over: 'Over limit', b_pace: 'On pace for ~{v} by payday',
     tab_home: 'Overview', tab_plan: 'Plan', tab_add: 'Add', tab_tx: 'Activity', tab_more: 'More',
@@ -606,6 +607,7 @@ const I = {
     auto_saved: 'أُضيفت {n} عمليات جديدة من الرسائل', auto_review: '{n} رسائل تحتاج مراجعة سريعة في الإضافة', sa_title: 'أتمتة رسائل الآيفون', sa_sub: 'تُضاف رسائل البنك تلقائيًا عبر اختصار في الآيفون. استخدم هذه القيم عند إعداده.', sa_show: 'اعرض إعدادات الاختصار', sa_new: 'أنشئ مفتاحًا جديدًا', sa_url: 'الرابط', sa_headers: 'الترويسات', sa_body: 'محتوى الطلب (JSON)', copy: 'نسخ',
     backup: 'النسخ الاحتياطي', backup_sub: 'نزّل كل بياناتك كملف، أو استعدها من ملف. احتفظ بنسخة في مكان آمن.', export_file: 'نزّل نسخة احتياطية', import_file: 'استعادة من ملف', imported: 'تمت استعادة {n} عنصر', account: 'الحساب', sign_out: 'تسجيل الخروج', data_sub_sa: 'محفوظة في قاعدة بيانات Supabase الخاصة بك؛ حسابك فقط يقرؤها.',
     due_now: 'المستحق هذه الدورة', due_now_sub: 'ضع علامة على ما دفعته مسبقًا حتى لا يُحسب مرتين.', paid_q_title: 'دُفع مسبقًا؟', paid_q_sub: 'حدّثت رصيدًا. ضع علامة على الدفعات المشمولة فيه حتى لا تُحسب مرتين.', mark_selected: 'علّم المحدد كمدفوع', skip: 'تخطَّ', marked: 'تم التعليم كمدفوع', paid_btn: 'مدفوع',
+    card_alert: 'شراء جديد على {c}: {v} ر.س لدى {m} ({d}). هذا يزيد المبلغ المستحق. استخدم الأهلي بدلًا منها.', card_alert_title: 'تم استخدام البطاقة الائتمانية',
     pay_title: 'تعليم كمدفوع', paid_with: 'دُفع من', record_tx: 'أضفها كعملية (يتحدث رصيد تلك البطاقة)', record_hint: 'ألغِ العلامة إن كنت حدّثت رصيد البطاقة يدويًا. إن وصلت رسالة البنك لاحقًا تُدمج ولا تُضاف مرتين.', merged: 'تطابق دفعة علّمتها', plan_budgets: 'استخدم ميزانيات خطتي', plan_budgets_done: 'تم ضبط الميزانيات من خطتك', combine: 'دمج', combine_title: 'احسبها معًا في ميزانية واحدة', combine_sub: 'الصرف في الفئات المحددة يُحسب ضمن هذه الميزانية.', counted_in: 'محسوبة ضمن {c}',
     move_to: 'تحويل لبطاقتي (ليس صرفًا)', pay_card: 'سداد {c}', b_ok: 'ضمن الحد', b_near: 'قريب من الحد', b_over: 'تجاوز الحد', b_pace: 'بهذه الوتيرة ~{v} قبل الراتب',
     tab_home: 'الرئيسية', tab_plan: 'الخطة', tab_add: 'إضافة', tab_tx: 'العمليات', tab_more: 'المزيد',
@@ -861,14 +863,20 @@ function crossedBy(newTx) {
   const before = Object.fromEntries(limitList().map(i => [i.key, i]));
   return limitList(newTx).filter(i => (i.state === 'near' || i.state === 'over') && (!before[i.key] || before[i.key].state !== i.state));
 }
+function cardUseList(days) {
+  const since = S.planMeta.noCardSince; if (!since) return [];
+  const from = days ? addDays(todayStr(), -days) : since;
+  return S.tx.filter(x => x.dir === 'out' && !isMove(x.category) && x.date >= since && x.date >= from && (cardOf(x) || {}).type === 'credit');
+}
+const cardUseText = x => t('card_alert', { c: cardLabel(cardOf(x)), v: nf.format(x.amount), m: x.merchant || '—', d: fmtShort(x.date) });
 function showCrossed(list) {
   if (!list.length) return;
-  openModal(`${mh(t('limit_alert_title'))}<div class="grid" style="gap:10px">${list.map(i => `<div class="banner ${i.state === 'over' ? 'bad' : ''}" style="margin:0">${esc(limitText(i))}</div>`).join('')}
+  openModal(`${mh(list.some(i => i.text) ? t('card_alert_title') : t('limit_alert_title'))}<div class="grid" style="gap:10px">${list.map(i => `<div class="banner ${i.state === 'over' ? 'bad' : ''}" style="margin:0">${esc(i.text || limitText(i))}</div>`).join('')}
     <div class="btns" style="justify-content:flex-end"><button class="btn" data-nav="budgets" data-close>${esc(t('nav_budgets'))}</button><button class="btn primary" data-close>${esc(t('ok'))}</button></div></div>`);
 }
 function alertsHtml() {
   const list = limitList().filter(i => i.state !== 'ok').sort((a, b) => ({ over: 0, near: 1, pace: 2 }[a.state] - { over: 0, near: 1, pace: 2 }[b.state]));
-  const pa = planAlerts();
+  const pa = cardUseList(7).map(x => ({ state: 'over', text: cardUseText(x) })).concat(planAlerts());
   if (!list.length && !pa.length) return '';
   return `<section class="alerts" aria-label="${esc(t('alerts'))}">${pa.map(a => `<button class="alert ${a.state}" data-nav="plan"><span class="alert-ic" aria-hidden="true">${a.state === 'over' ? '!' : '▲'}</span><span>${esc(a.text)}</span><span></span></button>`).join('')}${list.map(i => `<button class="alert ${i.state}" data-nav="budgets"><span class="alert-ic" aria-hidden="true">${i.state === 'over' ? '!' : i.state === 'near' ? '▲' : '↗'}</span><span>${esc(limitText(i))}</span><span class="alert-bar"><i style="width:${Math.min(100, i.pct)}%"></i></span></button>`).join('')}</section>`;
 }
@@ -889,6 +897,14 @@ function planStatus(it) {
   if ((it.repeat || 'once') !== 'once') return 'planned';
   if (planMatch(it)) return 'auto';
   return it.date < todayStr() ? 'overdue' : 'planned';
+}
+function spreadCats(it) {
+  if (Array.isArray(it.cats) && it.cats.length) return it.cats;
+  const n = String(it.name || ''); const out = [];
+  if (/grocer|supermarket|بقال|تموين/i.test(n)) out.push('groceries');
+  if (/fuel|gas|petrol|وقود|بنزين/i.test(n)) out.push('fuel');
+  if (/eat|restaurant|food|dining|cafe|مطعم|مطاعم|أكل|اكل/i.test(n)) out.push('food');
+  return out;
 }
 function forecast(n) {
   const td = todayStr(), c0 = curCycle(), sal = +S.settings.expectedSalary || 0;
@@ -914,8 +930,13 @@ function forecast(n) {
         lines.push({ k: it.type, name: it.name, amt: sign * (+it.amount || 0), date: c.start, ref: it });
       } else if (rep === 'spread') {
         if (it.date && it.date > c.end) continue;
-        const f = i === 0 ? Math.max(0, diffDays(td, c.next)) / len : 1;
-        if (f > 0) lines.push({ k: it.type, name: it.name, amt: sign * Math.round((+it.amount || 0) * f * 100) / 100, date: from, ref: it, spread: true });
+        let amt = +it.amount || 0;
+        if (i === 0) {
+          const cats = spreadCats(it);
+          if (cats.length && it.type !== 'income') { const T0 = cycleTotals(c); amt = Math.max(0, amt - cats.reduce((s, k) => s + (T0.byCat[k] || 0), 0)); }
+          else amt = amt * Math.max(0, diffDays(td, c.next)) / len;
+        }
+        if (amt > 0) lines.push({ k: it.type, name: it.name, amt: sign * Math.round(amt * 100) / 100, date: from, ref: it, spread: true });
       }
     }
     for (const u of upcoming(i === 0 ? addDays(from, -120) : from, c.end)) {
@@ -999,6 +1020,25 @@ function planAlerts() {
   return res.slice(0, 2);
 }
 
+/* ================= one-time data updates ================= */
+let patching = false;
+async function runPatches() {
+  if (patching || !S.db || !S.planMeta || !S.planMeta.startDebt) return; patching = true;
+  try {
+    const done = new Set(S.planMeta.patches || []); let changed = false;
+    if (!done.has('2026-11-jan-min')) {
+      const cc = (S.plan.find(x => x.type === 'card' && x.payRest) || {}).cardId || (S.cards.find(c => c.type === 'credit') || {}).id;
+      if (cc) {
+        if (!S.plan.some(x => x.id === 'p_card_jan')) await put('plan', 'p_card_jan', { type: 'card', name: 'Rajhi card – minimum due (at least)', amount: 180, date: '2027-01-25', repeat: 'once', cardId: cc, note: 'Pay at least the minimum (5% or 100 SAR). Pay more if the forecast shows room.' }, true);
+        if (!S.steps.some(x => x.id === 's11b')) await put('steps', 's11b', { order: 11.5, date: '2027-01-25', title_en: 'Pay at least the minimum on the Rajhi card', title_ar: 'سدد الحد الأدنى على الأقل لبطاقة الراجحي', detail_en: 'The December statement is due. Pay at least the minimum (5% or 100 SAR, about 180), more if the forecast shows room. Missing it means late fees and a mark on your credit record.', detail_ar: 'موعد سداد كشف ديسمبر. سدد الحد الأدنى على الأقل (5% أو 100 ريال، حوالي 180) وأكثر إن سمح التوقع. التأخير يعني رسومًا وأثرًا على سجلك الائتماني.' }, true);
+      }
+      done.add('2026-11-jan-min'); changed = true;
+    }
+    if (!done.has('2026-11-no-card')) { done.add('2026-11-no-card'); changed = true; }
+    if (changed) { const m = { ...S.planMeta }; delete m.id; m.patches = [...done]; if (!m.noCardSince) m.noCardSince = '2026-11-26'; await put('meta', 'plan', m, true); }
+  } finally { patching = false; }
+}
+
 /* ================= categorisation ================= */
 const WALLET_RE = [
   [/MOBILY\s*PAY|موبايلي\s*باي/i, k => /mobily/i.test(k.bank + ' ' + k.name)],
@@ -1056,7 +1096,7 @@ function subscribeAll() {
       else if (c === 'rules') S.rules = Object.fromEntries(docs.map(d => [d.id, d]));
       else if (c === 'reviews') S.reviews = Object.fromEntries(docs.map(d => [d.id, d]));
       else if (c === 'meta') { const pm = docs.find(d => d.id === 'plan'); S.planMeta = pm || {}; const st = docs.find(d => d.id === 'settings'); if (st) S.settings = { payday: 25, expectedSalary: 0, overrides: {}, accounts: {}, monthlyLimit: 0, warnAt: 80, ...st }; _sal = null; }
-      if (!snap.metadata.fromCache) { S.loaded[c] = true; if (COLS.every(k => S.loaded[k])) { clearTimeout(slowTimer); setStatus('ok'); } }
+      if (!snap.metadata.fromCache) { S.loaded[c] = true; if (COLS.every(k => S.loaded[k])) { clearTimeout(slowTimer); setStatus('ok'); setTimeout(runPatches, 300); } }
       schedule();
     }, err => { clearTimeout(slowTimer); setStatus(err && err.code === 'revoked' ? 'off' : 'slow'); });
   }
@@ -1711,7 +1751,8 @@ window.HF_importSms = async items => {
   if (review.length) { S.drafts = review.concat(S.drafts); }
   if (saved) toast(t('auto_saved', { n: saved }));
   if (review.length) toast(t('auto_review', { n: review.length }));
-  render(); showCrossed(cross);
+  const used = ok.filter(d => d.dir === 'out' && !isMove(d.category) && (cardForAccount(d.account) || {}).type === 'credit' && S.planMeta.noCardSince && d.date >= S.planMeta.noCardSince);
+  render(); showCrossed(used.map(d => ({ state: 'over', text: t('card_alert', { c: cardLabel(cardForAccount(d.account)), v: nf.format(d.amount), m: d.merchant || '—', d: fmtShort(d.date) }) })).concat(cross));
 };
 async function saveDrafts() {
   const sel = S.drafts.filter(d => d.on && d.amount != null); if (!sel.length) return;
