@@ -546,6 +546,9 @@ const I = {
     cash_eq: 'Cash on your cards {c} − planned until payday {u}',
     auto_saved: '{n} new transactions added from SMS', auto_review: '{n} SMS need a quick check in Add', sa_title: 'iPhone SMS automation', sa_sub: 'Bank SMS are added automatically by an iPhone Shortcut. Use these values when you set it up.', sa_show: 'Show my Shortcut settings', sa_new: 'Make a new key', sa_url: 'URL', sa_headers: 'Headers', sa_body: 'Request body (JSON)', copy: 'Copy',
     backup: 'Backup', backup_sub: 'Download all your data as a file, or restore from one. Keep a copy somewhere safe.', export_file: 'Download backup', import_file: 'Restore from file', imported: '{n} items restored', account: 'Account', sign_out: 'Sign out', data_sub_sa: 'Stored in your own Supabase database; only your account can read it.',
+    due_now: 'Due this cycle', due_now_sub: 'Tick off anything you have already paid so it is not counted twice.', paid_q_title: 'Already paid?', paid_q_sub: 'You updated a balance. Tick the payments that are already included in it, so they are not counted twice.', mark_selected: 'Mark selected as paid', skip: 'Skip', marked: 'Marked as paid', paid_btn: 'Paid',
+    pay_title: 'Mark as paid', paid_with: 'Paid with', record_tx: 'Add it as a transaction (updates that card\'s balance)', record_hint: 'Untick if you already updated the card balance by hand. If the bank SMS arrives later it is merged, not added twice.', merged: 'Matches a payment you ticked off', plan_budgets: 'Use my plan\'s budgets', plan_budgets_done: 'Budgets set from your plan', combine: 'Combine', combine_title: 'Count together in one budget', combine_sub: 'Spending in the ticked categories counts toward this budget.', counted_in: 'Counted in {c}',
+    move_to: 'Move to my card (not spending)', pay_card: 'Payment to {c}', b_ok: 'On track', b_near: 'Near limit', b_over: 'Over limit', b_pace: 'On pace for ~{v} by payday',
     tab_home: 'Overview', tab_plan: 'Plan', tab_add: 'Add', tab_tx: 'Activity', tab_more: 'More',
     timeline: 'Your timeline', timeline_sub: 'What to do and when, until you are debt-free. Tick each step when it is done.', step_next: 'Next', rules: 'Rules until debt-free', steps_done: '{a} of {b} done',
     nav_plan: 'Payoff plan', plan_title: 'Payoff plan', plan_sub: 'Every obligation until you are debt-free, and what each salary cycle will look like.',
@@ -602,6 +605,9 @@ const I = {
     cash_eq: 'النقد في بطاقاتك {c} − المخطط حتى الراتب {u}',
     auto_saved: 'أُضيفت {n} عمليات جديدة من الرسائل', auto_review: '{n} رسائل تحتاج مراجعة سريعة في الإضافة', sa_title: 'أتمتة رسائل الآيفون', sa_sub: 'تُضاف رسائل البنك تلقائيًا عبر اختصار في الآيفون. استخدم هذه القيم عند إعداده.', sa_show: 'اعرض إعدادات الاختصار', sa_new: 'أنشئ مفتاحًا جديدًا', sa_url: 'الرابط', sa_headers: 'الترويسات', sa_body: 'محتوى الطلب (JSON)', copy: 'نسخ',
     backup: 'النسخ الاحتياطي', backup_sub: 'نزّل كل بياناتك كملف، أو استعدها من ملف. احتفظ بنسخة في مكان آمن.', export_file: 'نزّل نسخة احتياطية', import_file: 'استعادة من ملف', imported: 'تمت استعادة {n} عنصر', account: 'الحساب', sign_out: 'تسجيل الخروج', data_sub_sa: 'محفوظة في قاعدة بيانات Supabase الخاصة بك؛ حسابك فقط يقرؤها.',
+    due_now: 'المستحق هذه الدورة', due_now_sub: 'ضع علامة على ما دفعته مسبقًا حتى لا يُحسب مرتين.', paid_q_title: 'دُفع مسبقًا؟', paid_q_sub: 'حدّثت رصيدًا. ضع علامة على الدفعات المشمولة فيه حتى لا تُحسب مرتين.', mark_selected: 'علّم المحدد كمدفوع', skip: 'تخطَّ', marked: 'تم التعليم كمدفوع', paid_btn: 'مدفوع',
+    pay_title: 'تعليم كمدفوع', paid_with: 'دُفع من', record_tx: 'أضفها كعملية (يتحدث رصيد تلك البطاقة)', record_hint: 'ألغِ العلامة إن كنت حدّثت رصيد البطاقة يدويًا. إن وصلت رسالة البنك لاحقًا تُدمج ولا تُضاف مرتين.', merged: 'تطابق دفعة علّمتها', plan_budgets: 'استخدم ميزانيات خطتي', plan_budgets_done: 'تم ضبط الميزانيات من خطتك', combine: 'دمج', combine_title: 'احسبها معًا في ميزانية واحدة', combine_sub: 'الصرف في الفئات المحددة يُحسب ضمن هذه الميزانية.', counted_in: 'محسوبة ضمن {c}',
+    move_to: 'تحويل لبطاقتي (ليس صرفًا)', pay_card: 'سداد {c}', b_ok: 'ضمن الحد', b_near: 'قريب من الحد', b_over: 'تجاوز الحد', b_pace: 'بهذه الوتيرة ~{v} قبل الراتب',
     tab_home: 'الرئيسية', tab_plan: 'الخطة', tab_add: 'إضافة', tab_tx: 'العمليات', tab_more: 'المزيد',
     timeline: 'جدولك الزمني', timeline_sub: 'ماذا تفعل ومتى حتى تتخلص من الديون. ضع علامة على كل خطوة عند إنجازها.', step_next: 'التالي', rules: 'قواعد حتى السداد الكامل', steps_done: 'تم {a} من {b}',
     nav_plan: 'خطة السداد', plan_title: 'خطة السداد', plan_sub: 'كل الالتزامات حتى تتخلص من الديون، وكيف ستكون كل دورة راتب.',
@@ -793,7 +799,8 @@ const tsOf = x => x.date + 'T' + (x.time || '00:00');
 const nowTs = () => { const d = new Date(); return `${todayStr()}T${pad(d.getHours())}:${pad(d.getMinutes())}`; };
 function cardBalance(c) {
   const txs = S.tx.filter(x => { const k = cardOf(x); return k && k.id === c.id; }).sort((a, b) => tsOf(a).localeCompare(tsOf(b)));
-  const ins = S.tx.filter(x => x.toCardId === c.id && x.dir === 'out' && !(cardOf(x) && cardOf(x).id === c.id));
+  const ins = S.tx.filter(x => x.toCardId === c.id && x.dir === 'out' && !(cardOf(x) && cardOf(x).id === c.id)
+    && !txs.some(y => y.dir === 'in' && Math.abs(y.amount - x.amount) < 0.01 && Math.abs(diffDays(y.date, x.date)) <= 1));
   let anchor = { v: +c.balance || 0, at: c.balanceAt || '', src: c.balanceAt ? 'manual' : 'none', id: null };
   for (const x of txs) if (x.balance != null && tsOf(x) > anchor.at) anchor = { v: +x.balance, at: tsOf(x), src: 'sms', id: x.id };
   if (anchor.src === 'none') return { v: null, at: '', src: 'none' };
@@ -801,6 +808,17 @@ function cardBalance(c) {
   for (const x of txs) if (x.id !== anchor.id && tsOf(x) > anchor.at) v += x.dir === 'in' ? x.amount : -x.amount;
   for (const x of ins) if (tsOf(x) > anchor.at) v += x.amount;
   return { v: Math.round(v * 100) / 100, at: anchor.at, src: anchor.src };
+}
+function findOutgoingPair(x) {
+  const k = cardOf(x); if (!k || x.dir !== 'in') return null;
+  return S.tx.find(y => y.dir === 'out' && isMove(y.category) && y.toCardId === k.id && Math.abs(y.amount - x.amount) < 0.01 && Math.abs(diffDays(y.date, x.date)) <= 1) || null;
+}
+async function pairIncoming(outTx) {
+  for (const y of S.tx) {
+    if (y.dir !== 'in' || y.category === 'internal') continue;
+    const k = cardOf(y); if (!k || k.id !== outTx.toCardId) continue;
+    if (Math.abs(y.amount - outTx.amount) < 0.01 && Math.abs(diffDays(y.date, outTx.date)) <= 1) { const n = { ...y, category: 'internal' }; delete n.review; await put('tx', y.id, strip(n), true); }
+  }
 }
 function unknownDigits() {
   const seen = {};
@@ -811,6 +829,11 @@ function unknownDigits() {
 const cardLabel = c => c ? (c.name || ('•' + (c.digits || [''])[0])) : '';
 
 /* ================= limits ================= */
+const budgetHost = id => { for (const [k, b] of Object.entries(S.budgets)) if (k !== id && b && b.limit > 0 && (b.also || []).includes(id)) return k; return null; };
+const budgetCats = id => [id, ...(((S.budgets[id] || {}).also) || [])];
+const budgetLabel = id => budgetCats(id).map(catName).join(' + ');
+const budgetSpentOf = (id, byCat) => budgetCats(id).reduce((s, c) => s + (byCat[c] || 0), 0);
+const PLAN_BUDGETS = { housing: { limit: 1400 }, family: { limit: 500 }, bills: { limit: 300 }, subs: { limit: 520 }, groceries: { limit: 800, also: ['fuel'] }, food: { limit: 300 } };
 function limitList(extra) {
   // extra: optional array of {category, amount, date, dir} not yet saved
   const c = curCycle(), td = todayStr(); const T = cycleTotals(c);
@@ -825,7 +848,7 @@ function limitList(extra) {
     items.push({ key, name, spent, limit, pct, proj, state, left });
   };
   push('all', t('all_spending'), out, +S.settings.monthlyLimit || 0);
-  for (const k of OUT_CATS) push(k.id, k[S.lang], byCat[k.id] || 0, (S.budgets[k.id] && S.budgets[k.id].limit) || 0);
+  for (const k of OUT_CATS) { if (budgetHost(k.id)) continue; push(k.id, budgetLabel(k.id), budgetSpentOf(k.id, byCat), (S.budgets[k.id] && S.budgets[k.id].limit) || 0); }
   return items;
 }
 function limitText(i) {
@@ -895,9 +918,9 @@ function forecast(n) {
         if (f > 0) lines.push({ k: it.type, name: it.name, amt: sign * Math.round((+it.amount || 0) * f * 100) / 100, date: from, ref: it, spread: true });
       }
     }
-    for (const u of upcoming(from, c.end)) {
-      if (u.type === 'debt') { const r = debtRem[u.ref.id] || 0; const a = Math.min(r, u.amount); if (a <= 0) continue; debtRem[u.ref.id] = r - a; lines.push({ k: 'debt', name: u.name, amt: -a, date: u.date, ref: u.ref }); }
-      else lines.push({ k: 'sub', name: u.name, amt: -u.amount, date: u.date, ref: u.ref });
+    for (const u of upcoming(i === 0 ? addDays(from, -120) : from, c.end)) {
+      if (u.type === 'debt') { const r = debtRem[u.ref.id] || 0; const a = Math.min(r, u.amount); if (a <= 0) continue; debtRem[u.ref.id] = r - a; lines.push({ k: 'debt', name: u.name, amt: -a, date: u.date < from ? from : u.date, ref: u.ref }); }
+      else if (u.date >= from) lines.push({ k: 'sub', name: u.name, amt: -u.amount, date: u.date, ref: u.ref });
     }
     lines.sort((a, b) => a.date.localeCompare(b.date));
     const inn = lines.filter(l => l.amt > 0).reduce((s, l) => s + l.amt, 0), outt = -lines.filter(l => l.amt < 0).reduce((s, l) => s + l.amt, 0);
@@ -905,6 +928,65 @@ function forecast(n) {
     out.push({ c, i, opening, inn, outt, closing: bal, lines, debt: owed + Object.values(debtRem).reduce((s, v) => s + v, 0) });
   }
   return out;
+}
+function dueItems(to) {
+  const td = todayStr(), out = [];
+  for (const it of S.plan) {
+    if ((it.repeat || 'once') !== 'once' || it.type === 'income') continue;
+    const st = planStatus(it); if (st === 'done' || st === 'auto' || it.date > to) continue;
+    out.push({ k: 'plan', id: it.id, name: it.name, date: it.date, amount: it.payRest ? null : +it.amount });
+  }
+  for (const u of upcoming(addDays(td, -120), to)) {
+    if (u.type === 'debt') out.push({ k: 'debt', id: u.ref.id, name: u.name, date: u.date, amount: u.amount });
+    else if (u.date >= td) out.push({ k: 'sub', id: u.ref.id, name: u.name, date: u.date, amount: u.amount });
+  }
+  const seen = new Set();
+  return out.filter(x => { const key = x.k + x.id; if (x.k === 'debt' && seen.has(key)) return false; seen.add(key); return true; }).sort((a, b) => a.date.localeCompare(b.date));
+}
+async function markPaid(k, id, date) {
+  if (k === 'plan') { const it = S.plan.find(y => y.id === id); if (it) await put('plan', id, strip({ ...it, status: 'done', doneAt: todayStr() }), true); }
+  else if (k === 'debt') { const b = S.debts.find(y => y.id === id); if (b) { const amt = Math.min(b.installment || b.remaining, b.remaining); await put('debts', id, strip({ ...b, remaining: Math.max(0, Math.round((b.remaining - amt) * 100) / 100), nextDate: b.nextDate ? addMonths(b.nextDate, 1, +b.nextDate.slice(8, 10)) : '' }), true); } }
+  else if (k === 'sub') { const s = S.subs.find(y => y.id === id); if (s) await put('subs', id, strip({ ...s, nextDate: addMonths(date || s.nextDate, subInterval(s), +(s.nextDate || date).slice(8, 10)) }), true); }
+}
+const dueRow = (x, withBtn) => `<div class="row"><div class="cat-dot" aria-hidden="true">${x.k === 'sub' ? '↻' : x.k === 'debt' ? '٪' : '•'}</div>
+  <div style="min-width:0"><div class="t">${esc(x.name)}</div><div class="s"><span>${esc(fmtDate(x.date))}</span>${pillDays(x.date)}</div></div>
+  <div class="amt">${x.amount == null ? esc(t('rest_of_card')) : money(x.amount)}${withBtn ? `<div style="margin-top:4px"><button class="btn sm" data-pay="${x.k}|${esc(x.id)}|${x.date}">${esc(t('paid_btn'))} ✓</button></div>` : ''}</div></div>`;
+function payItem(k, id, date) {
+  if (k === 'plan') { const it = S.plan.find(y => y.id === id); if (!it) return null; let amt = +it.amount || 0; if (it.type === 'card') { const c = S.cards.find(x => x.id === it.cardId); const b = c ? cardBalance(c) : null; const owed = c && c.creditLimit && b && b.v != null ? c.creditLimit - b.v : amt; if (it.payRest || !amt) amt = owed; }
+    return { name: it.name, amount: Math.round(amt * 100) / 100, cat: it.type === 'card' ? 'to:' + it.cardId : autoCategory({ merchant: it.name, dir: 'out', kind: 'purchase', raw: '' }).cat, card: it.type === 'card' ? '' : it.cardId }; }
+  if (k === 'debt') { const b = S.debts.find(y => y.id === id); if (!b) return null; return { name: b.name, amount: Math.min(b.installment || b.remaining, b.remaining), cat: 'installments' }; }
+  if (k === 'sub') { const s = S.subs.find(y => y.id === id); if (!s) return null; return { name: s.name, amount: subPlan(s), cat: s.category || 'subs' }; }
+  return null;
+}
+function modalPay(k, id, date) {
+  const x = payItem(k, id, date); if (!x) return;
+  const main = (S.cards.find(c => c.main) || {}).id || '';
+  const cat = x.cat && x.cat.startsWith('to:') ? x.cat : x.cat;
+  const pc = parseCat(cat);
+  openModal(`${mh(t('pay_title') + ': ' + x.name)}<form class="form" id="payForm" data-pay="${k}|${esc(id)}|${esc(date)}">
+    <label class="f">${esc(t('amount'))}<input class="inp num" id="py-amt" name="amount" type="number" step="0.01" min="0" value="${x.amount}" required></label>
+    <label class="f">${esc(t('date'))}<input class="inp" id="py-date" name="date" type="date" value="${todayStr()}" required></label>
+    <label class="f full">${esc(t('paid_with'))}<select class="inp" id="py-card" name="cardId">${cardOptions(x.card || main)}</select></label>
+    <label class="f full">${esc(t('category'))}<select class="inp" id="py-cat" name="category">${catMoveOptions(pc.category, pc.toCardId, 'out')}</select></label>
+    <label class="check full"><input type="checkbox" id="py-rec" name="record" checked>${esc(t('record_tx'))}</label>
+    <p class="full" style="margin:0;color:var(--muted);font-size:13px">${esc(t('record_hint'))}</p>
+    ${foot('')}</form>`);
+}
+function findMarked(d) {
+  const k = cardForAccount(d.account);
+  return S.tx.find(m => (m.source === 'mark' || m.source === 'manual') && !m.raw && m.dir === d.dir && Math.abs(m.amount - d.amount) <= 0.01 && Math.abs(diffDays(m.date, d.date)) <= 3 && (!k || !m.cardId || m.cardId === k.id)) || null;
+}
+async function mergeSms(m, d) {
+  const n = { ...m, raw: d.raw, time: d.time || m.time, account: d.account || m.account, method: d.method || m.method, source: 'sms+' + m.source };
+  if (d.balance != null) n.balance = d.balance;
+  await put('tx', m.id, strip(n), true);
+}
+function askAlreadyPaid() {
+  const td = todayStr(); const list = dueItems(addDays(td, 3));
+  if (!list.length) return;
+  openModal(`${mh(t('paid_q_title'))}<p style="margin:0 0 10px;color:var(--ink-2);font-size:14px">${esc(t('paid_q_sub'))}</p>
+    <form id="paidForm"><div class="list">${list.map((x, i) => `<label class="row" style="cursor:pointer"><input type="checkbox" name="m${i}" value="${x.k}|${esc(x.id)}|${x.date}" ${x.date <= td ? 'checked' : ''} style="width:20px;height:20px"><div style="min-width:0"><div class="t">${esc(x.name)}</div><div class="s"><span>${esc(fmtDate(x.date))}</span></div></div><div class="amt">${x.amount == null ? esc(t('rest_of_card')) : money(x.amount)}</div></label>`).join('')}</div>
+    <div class="btns" style="justify-content:flex-end;margin-top:12px"><button type="button" class="btn" data-close>${esc(t('skip'))}</button><button class="btn primary" type="submit">${esc(t('mark_selected'))}</button></div></form>`);
 }
 function planAlerts() {
   if (!S.plan.length) return [];
@@ -918,9 +1000,27 @@ function planAlerts() {
 }
 
 /* ================= categorisation ================= */
+const WALLET_RE = [
+  [/MOBILY\s*PAY|موبايلي\s*باي/i, k => /mobily/i.test(k.bank + ' ' + k.name)],
+  [/STC\s*(PAY|BANK)|STCPAY|اس\s*تي\s*سي\s*(باي|بنك)/i, k => /stc/i.test(k.bank + ' ' + k.name)],
+  [/\bBARQ\b|برق/i, k => /barq/i.test(k.bank + ' ' + k.name)],
+  [/D\s*360|دال\s*360/i, k => /d360/i.test((k.bank + ' ' + k.name).replace(/\s/g, ''))],
+  [/\bNEO\b|نيو/i, k => /neo/i.test(k.bank + ' ' + k.name)],
+];
+function ownCardTarget(d) {
+  const src = cardForAccount(d.account); const text = String(d.merchant || '') + '\n' + String(d.raw || '');
+  for (const [re, pick] of WALLET_RE) if (re.test(text)) { const k = S.cards.find(c => pick(c) && (!src || c.id !== src.id)); if (k) return k; }
+  // digits of another own card mentioned in the message (e.g. "to card ****1234")
+  const nums = [...String(d.raw || '').matchAll(/[*xX•]\s?(\d{3,4})\b/g)].map(m => m[1]);
+  for (const k of S.cards) { if (src && k.id === src.id) continue; if ((k.digits || []).some(dg => dg.length >= 4 && nums.includes(dg))) return k; }
+  return null;
+}
 function autoCategory(d) {
   const key = ruleId(d.merchant);
   if (key && S.rules[key] && CAT[S.rules[key].category]) return { cat: S.rules[key].category, how: 'rule', to: S.rules[key].toCardId };
+  const own = ownCardTarget(d);
+  if (own && d.dir === 'out') return { cat: own.type === 'credit' ? 'cc_payment' : 'internal', how: 'own', to: own.id };
+  if (own && d.dir === 'in') return { cat: 'internal', how: 'own' };
   if (/(سداد\s*بطاق|بطاقة\s*ائتمان|Credit\s*Card\s*(Payment|Repayment)|Card\s*Payment)/i.test(d.raw || '')) return { cat: 'cc_payment', how: 'kind' };
   if (KIND_CAT[d.kind] && (d.kind !== 'transfer_out')) return { cat: KIND_CAT[d.kind], how: 'kind' };
   const hay = (String(d.merchant || '') + ' ').toUpperCase();
@@ -1048,6 +1148,9 @@ function render() {
 }
 
 /* ================= shared fragments ================= */
+const catMoveOptions = (cat, to, dir) => CATS.filter(c => !dir || c.t === dir || c.t === 'both').map(c => `<option value="${c.id}" ${c.id === cat && !(isMove(cat) && to) ? 'selected' : ''}>${esc(c[S.lang])}</option>`).join('')
+  + (S.cards.length ? `<optgroup label="${esc(t('move_to'))}">` + S.cards.map(k => `<option value="to:${esc(k.id)}" ${isMove(cat) && to === k.id ? 'selected' : ''}>→ ${esc(k.type === 'credit' ? t('pay_card', { c: cardLabel(k) }) : cardLabel(k))}</option>`).join('') + '</optgroup>' : '');
+function parseCat(v) { v = String(v || ''); if (v.startsWith('to:')) { const id = v.slice(3); const k = S.cards.find(c => c.id === id); return { category: k && k.type === 'credit' ? 'cc_payment' : 'internal', toCardId: id }; } return { category: v, toCardId: '' }; }
 const catOptions = (sel, dir) => CATS.filter(c => !dir || c.t === dir || c.t === 'both').map(c => `<option value="${c.id}" ${c.id === sel ? 'selected' : ''}>${esc(c[S.lang])}</option>`).join('');
 const initials = id => { const n = catName(id); return esc(n.replace(/[^\p{L}]/gu, '').slice(0, S.lang === 'ar' ? 1 : 2)); };
 const accName = a => { if (!a) return ''; const c = cardForAccount(a); return c ? cardLabel(c) : '•' + normDigits(a); };
@@ -1111,13 +1214,15 @@ function vHome() {
     <div class="tile"><span class="lbl">${esc(t('subs_month'))}</span><span class="val">${money(subsMonth, { round: true })}</span><span class="foot">${S.subs.filter(s => s.active !== false).length} ${esc(t('active'))}</span></div></div>`;
 
   const up = upcoming(td, addDays(td, 30));
-  const upHtml = up.length ? up.map(u => `<div class="row"><div class="cat-dot" aria-hidden="true">${u.type === 'sub' ? '↻' : '٪'}</div>
+  const dueNow = dueItems(c.end);
+  const upLater = up.filter(u => u.date > c.end);
+  const upHtml = (dueNow.length || upLater.length) ? dueNow.map(x => dueRow(x, true)).join('') + upLater.map(u => `<div class="row"><div class="cat-dot" aria-hidden="true">${u.type === 'sub' ? '↻' : '٪'}</div>
       <div style="min-width:0"><div class="t">${esc(u.name)}</div><div class="s"><span>${esc(fmtDate(u.date))}</span>${u.est ? `<span class="pill">${esc(t('estimate'))}</span>` : ''}${u.ends ? `<span class="pill bad">${esc(t('ends', { d: '' }))}</span>` : ''}</div></div>
       <div class="amt">${u.amountMin ? `<span class="num" style="color:var(--muted);font-size:12px">${nf0.format(u.amountMin)} – </span>` : ''}${money(u.amount, { round: false })}<div>${pillDays(u.date)}</div></div></div>`).join('') : `<div class="empty">${esc(t('nothing_due'))}</div>`;
 
-  const lim = OUT_CATS.filter(k => S.budgets[k.id] && S.budgets[k.id].limit > 0);
-  const budHtml = lim.length ? lim.map(k => { const sp = T.byCat[k.id] || 0, l = S.budgets[k.id].limit, st = budgetState(sp, l);
-    return `<div class="brow"><span>${esc(k[S.lang])}</span><div class="bar ${st}"><i style="width:${Math.min(100, sp / l * 100)}%"></i></div><span class="num" style="font-size:13px">${nf0.format(sp)} / ${nf0.format(l)}</span></div>`; }).join('')
+  const lim = OUT_CATS.filter(k => S.budgets[k.id] && S.budgets[k.id].limit > 0 && !budgetHost(k.id));
+  const budHtml = lim.length ? lim.map(k => { const sp = budgetSpentOf(k.id, T.byCat), l = S.budgets[k.id].limit, st = budgetState(sp, l);
+    return `<div class="brow"><span>${esc(budgetLabel(k.id))}</span><div class="bar ${st}"><i style="width:${Math.min(100, sp / l * 100)}%"></i></div><span class="num" style="font-size:13px">${nf0.format(sp)} / ${nf0.format(l)}</span></div>`; }).join('')
     : `<div class="empty">${esc(t('no_budgets'))}<div style="margin-top:8px"><button class="btn sm" data-nav="budgets">${esc(t('set_budgets'))}</button></div></div>`;
 
   const recent = S.tx.slice(0, 8);
@@ -1150,11 +1255,10 @@ function vAdd() {
         <label class="f">${esc(t('kind'))}<select class="inp" id="d-dir-${i}" data-d="${i}" data-k="dir"><option value="out" ${d.dir === 'out' ? 'selected' : ''}>${esc(t('expense'))}</option><option value="in" ${d.dir === 'in' ? 'selected' : ''}>${esc(t('income'))}</option></select></label>
         <label class="f">${esc(t('amount'))}<input class="inp num" type="number" step="0.01" id="d-amt-${i}" data-d="${i}" data-k="amount" value="${d.amount ?? ''}"></label>
         <label class="f">${esc(t('merchant'))}<input class="inp" id="d-m-${i}" data-d="${i}" data-k="merchant" value="${esc(d.merchant)}"></label>
-        <label class="f">${esc(t('category'))}<select class="inp" id="d-c-${i}" data-d="${i}" data-k="category">${catOptions(d.category)}</select></label>
+        <label class="f">${esc(t('category'))}<select class="inp" id="d-c-${i}" data-d="${i}" data-k="category">${catMoveOptions(d.category, d.toCardId)}</select></label>
         <label class="f">${esc(t('date'))}<input class="inp" type="date" id="d-dt-${i}" data-d="${i}" data-k="date" value="${esc(d.date)}"></label>
         <label class="f">${esc(t('card'))}<select class="inp" id="d-card-${i}" data-d="${i}" data-k="cardId">${cardOptions(d.cardId)}</select></label>
-        ${isMove(d.category) ? `<label class="f" style="grid-column:2/-1">${esc(t('paid_to'))}<select class="inp" id="d-to-${i}" data-d="${i}" data-k="toCardId">${cardOptions(d.toCardId)}</select></label>` : ''}
-        <div class="flags">${d.dup ? `<span class="pill bad">${esc(t('dup'))}</span>` : ''}${d.amount == null ? `<span class="pill bad">${esc(t('no_amount'))}</span>` : ''}${d.how === 'ai' ? `<span class="pill ai">${esc(t('ai'))}</span>` : ''}${d.currency && d.currency !== 'SAR' ? `<span class="pill warn">${esc(t('fx', { c: d.currency + ' ' + d.originalAmount }))}</span>` : ''}${d.account && !cardForAccount(d.account) && !d.cardSet ? `<button class="pill warn" data-new-card="${esc(normDigits(d.account))}" style="cursor:pointer">${esc(t('new_card', { d: normDigits(d.account) }))} · ${esc(t('add_this_card'))}</button>` : ''}${d.method ? `<span class="pill">${esc(d.method)}</span>` : ''}${d.balance != null ? `<span class="pill">${esc(t('balances'))}: ${nf.format(d.balance)}</span>` : ''}${d.time ? `<span class="pill">${esc(d.time)}</span>` : ''}</div>
+        <div class="flags">${d.dup ? `<span class="pill bad">${esc(t('dup'))}</span>` : ''}${d.mergeInto ? `<span class="pill good">${esc(t('merged'))}</span>` : ''}${d.amount == null ? `<span class="pill bad">${esc(t('no_amount'))}</span>` : ''}${d.how === 'ai' ? `<span class="pill ai">${esc(t('ai'))}</span>` : ''}${d.currency && d.currency !== 'SAR' ? `<span class="pill warn">${esc(t('fx', { c: d.currency + ' ' + d.originalAmount }))}</span>` : ''}${d.account && !cardForAccount(d.account) && !d.cardSet ? `<button class="pill warn" data-new-card="${esc(normDigits(d.account))}" style="cursor:pointer">${esc(t('new_card', { d: normDigits(d.account) }))} · ${esc(t('add_this_card'))}</button>` : ''}${d.method ? `<span class="pill">${esc(d.method)}</span>` : ''}${d.balance != null ? `<span class="pill">${esc(t('balances'))}: ${nf.format(d.balance)}</span>` : ''}${d.time ? `<span class="pill">${esc(d.time)}</span>` : ''}</div>
         <div class="raw">${esc(d.raw)}</div></div>`).join('')}</div></section>` : '';
   return `${head(t('add_title'), t('add_desc'))}
     <div class="grid" style="grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:start" id="addGrid">
@@ -1166,7 +1270,7 @@ function vAdd() {
           <label class="f">${esc(t('kind'))}<select class="inp" id="m-dir" name="dir"><option value="out">${esc(t('expense'))}</option><option value="in">${esc(t('income'))}</option></select></label>
           <label class="f">${esc(t('amount'))}<input class="inp num" id="m-amt" name="amount" type="number" step="0.01" min="0" required></label>
           <label class="f full">${esc(t('merchant'))}<input class="inp" id="m-merchant" name="merchant" required></label>
-          <label class="f">${esc(t('category'))}<select class="inp" id="m-cat" name="category">${catOptions('other')}</select></label>
+          <label class="f">${esc(t('category'))}<select class="inp" id="m-cat" name="category">${catMoveOptions('other', '')}</select></label>
           <label class="f">${esc(t('date'))}<input class="inp" id="m-date" name="date" type="date" value="${td}" required></label>
           <label class="f full">${esc(t('card'))}<select class="inp" id="m-card" name="cardId">${cardOptions((S.cards.find(c => c.main) || {}).id)}</select></label>
           <label class="f full">${esc(t('note'))}<input class="inp" id="m-note" name="note"></label>
@@ -1233,7 +1337,7 @@ function vPlan() {
     return `<div class="row" style="${st === 'done' || st === 'auto' ? 'opacity:.6' : ''}"><div class="cat-dot ${it.type === 'income' ? 'inc' : ''}" aria-hidden="true">${it.type === 'income' ? '+' : it.type === 'card' ? '▭' : '•'}</div>
       <div style="min-width:0"><div class="t">${esc(it.name)}</div><div class="s"><span>${esc(it.repeat && it.repeat !== 'once' ? t('r_' + it.repeat) : fmtDate(it.date))}</span>${(it.repeat || 'once') === 'once' ? stPill(st) : ''}${it.type === 'card' ? `<span>${esc(t('it_card'))}</span>` : ''}${m ? `<span>${esc(m.merchant || '')} · ${esc(fmtShort(m.date))}</span>` : ''}${it.note ? `<span>${esc(it.note)}</span>` : ''}</div></div>
       <div class="amt"><div class="${it.type === 'income' ? 'in' : ''}">${it.payRest ? esc(t('rest_of_card')) : money((it.type === 'income' ? 1 : -1) * it.amount, { sign: true })}</div>
-      <div class="btns" style="justify-content:flex-end;margin-top:4px">${(it.repeat || 'once') === 'once' ? (st === 'done' ? `<button class="btn sm ghost" data-plan-undo="${esc(it.id)}">${esc(t('undo'))}</button>` : st !== 'auto' ? `<button class="btn sm" data-plan-done="${esc(it.id)}">${esc(t('mark_paid'))}</button>` : '') : ''}<button class="btn sm" data-edit-plan="${esc(it.id)}">${esc(t('edit'))}</button></div></div></div>`; };
+      <div class="btns" style="justify-content:flex-end;margin-top:4px">${(it.repeat || 'once') === 'once' ? (st === 'done' ? `<button class="btn sm ghost" data-plan-undo="${esc(it.id)}">${esc(t('undo'))}</button>` : st !== 'auto' ? `<button class="btn sm" data-pay="plan|${esc(it.id)}|${esc(it.date)}">${esc(t('mark_paid'))}</button>` : '') : ''}<button class="btn sm" data-edit-plan="${esc(it.id)}">${esc(t('edit'))}</button></div></div></div>`; };
   return `${head(t('plan_title'), t('plan_sub'), `<button class="btn primary" data-edit-plan="">${esc(t('add_item'))}</button>`)}
     ${alertsHtml()}
     <div class="grid g4" style="margin-bottom:16px">
@@ -1241,6 +1345,7 @@ function vPlan() {
       <div class="tile"><span class="lbl">${esc(t('goal'))}</span><span class="val" style="font-size:16px">${esc(S.planMeta.goal || '—')}</span><span class="foot">${free ? `<span class="pill good">${esc(t('on_track', { d: fmtShort(free.c.end) }))}</span>` : `<span class="pill warn">${esc(t('off_track'))}</span>`}</span></div>
       <div class="tile"><span class="lbl">${esc(t('cash_now'))}</span><span class="val">${money(cashNow(), { round: true })}</span></div>
       <div class="tile"><span class="lbl">${esc(t('lowest'))}</span><span class="val" style="color:${lowest && lowest.closing < 0 ? 'var(--bad)' : 'var(--ink)'}">${lowest ? money(lowest.closing, { round: true }) : '—'}</span><span class="foot">${lowest ? esc(t('cycle_of', { a: fmtShort(lowest.c.start), b: fmtShort(lowest.c.end) })) : ''}</span></div></div>
+    ${(() => { const d = dueItems(curCycle().end); return d.length ? `<section class="panel" style="margin-bottom:16px"><div class="panel-h"><div><h2>${esc(t('due_now'))}</h2><div class="sub">${esc(t('due_now_sub'))}</div></div></div><div class="list">${d.map(x => dueRow(x, true)).join('')}</div></section>` : ''; })()}
     ${timelineHtml()}
     <section class="panel" style="margin-bottom:16px"><div class="panel-h"><div><h2>${esc(t('forecast'))}</h2><div class="sub">${esc(t('forecast_sub'))}</div></div></div>
       ${fcChart(fc)}
@@ -1354,12 +1459,16 @@ function vBudgets() {
   const c = curCycle(), p = shiftCycle(c, -1), T = cycleTotals(c), P = cycleTotals(p);
   const sal = +S.settings.expectedSalary || 0;
   let totL = 0, totS = 0;
-  const rows = OUT_CATS.map(k => { const l = (S.budgets[k.id] && S.budgets[k.id].limit) || 0, sp = T.byCat[k.id] || 0; totL += l; totS += sp; const st = budgetState(sp, l);
-    return `<div class="brow" style="grid-template-columns:minmax(120px,1.1fr) 2fr 110px 120px"><div><div style="font-weight:500">${esc(k[S.lang])}</div><div class="s" style="font-size:12px;color:var(--muted)">${esc(t('last_cycle'))}: ${money(P.byCat[k.id] || 0, { round: true })}</div></div>
+  const LL = Object.fromEntries(limitList().map(i => [i.key, i]));
+  const rows = OUT_CATS.map(k => { const host = budgetHost(k.id);
+    if (host) { totS += T.byCat[k.id] || 0; return `<div class="brow" style="grid-template-columns:1fr auto;opacity:.7"><div><div style="font-weight:500">${esc(k[S.lang])}</div><div class="s" style="font-size:12px;color:var(--muted)">${esc(t('counted_in', { c: budgetLabel(host) }))} · ${money(T.byCat[k.id] || 0, { round: true })}</div></div><span></span></div>`; }
+    const l = (S.budgets[k.id] && S.budgets[k.id].limit) || 0, sp = budgetSpentOf(k.id, T.byCat); totL += l; totS += T.byCat[k.id] || 0; const st = budgetState(sp, l); const li = LL[k.id];
+    const pill = li ? (li.state === 'over' ? `<span class="pill bad">${esc(t('b_over'))}</span>` : li.state === 'near' ? `<span class="pill warn">${esc(t('b_near'))}</span>` : li.state === 'pace' ? `<span class="pill warn">${esc(t('b_pace', { v: nf0.format(Math.round(li.proj)) }))}</span>` : `<span class="pill good">${esc(t('b_ok'))}</span>`) : '';
+    return `<div class="brow" style="grid-template-columns:minmax(120px,1.1fr) 2fr 110px 120px"><div><div style="font-weight:500;display:flex;gap:6px;flex-wrap:wrap;align-items:center">${esc(budgetLabel(k.id))} ${pill}<button class="btn ghost sm" data-combine="${k.id}" style="padding:2px 6px">${esc(t('combine'))}</button></div><div class="s" style="font-size:12px;color:var(--muted)">${esc(t('last_cycle'))}: ${money(P.byCat[k.id] || 0, { round: true })}</div></div>
       <div><div class="bar ${st}"><i style="width:${l ? Math.min(100, sp / l * 100) : 0}%"></i></div><div style="font-size:12px;margin-top:4px;color:${st === 'bad' ? 'var(--bad)' : 'var(--ink-2)'}">${money(sp, { round: true })}${l ? ' · ' + esc(sp > l ? t('over_by', { v: moneyTxt(Math.round(sp - l)) }) : t('left_v', { v: moneyTxt(Math.round(l - sp)) })) : ''}</div></div>
       <span></span><label class="f" style="font-size:12px">${esc(t('limit'))}<input class="inp num" type="number" min="0" step="10" id="b-${k.id}" data-budget="${k.id}" value="${l || ''}" placeholder="—"></label></div>`; }).join('');
   const mLim = +S.settings.monthlyLimit || 0; const allSt = budgetState(T.out, mLim);
-  return `${head(t('budgets_title'), t('budgets_sub') + ' ' + t('cycle_of', { a: fmtShort(c.start), b: fmtShort(c.end) }))}
+  return `${head(t('budgets_title'), t('budgets_sub') + ' ' + t('cycle_of', { a: fmtShort(c.start), b: fmtShort(c.end) }), `<button class="btn" data-plan-budgets>${esc(t('plan_budgets'))}</button>`)}
     ${alertsHtml()}
     <section class="panel" style="margin-bottom:16px"><div class="form" style="grid-template-columns:1fr 1fr 2fr;align-items:end">
       <label class="f">${esc(t('limit_overall'))}<input class="inp num" type="number" min="0" step="50" id="s-mlimit" data-set="monthlyLimit" value="${mLim || ''}" placeholder="—"></label>
@@ -1509,10 +1618,9 @@ function modalTx(id) {
     <label class="f">${esc(t('kind'))}<select class="inp" id="e-dir" name="dir"><option value="out" ${x.dir === 'out' ? 'selected' : ''}>${esc(t('expense'))}</option><option value="in" ${x.dir === 'in' ? 'selected' : ''}>${esc(t('income'))}</option></select></label>
     <label class="f">${esc(t('amount'))}<input class="inp num" id="e-amt" name="amount" type="number" step="0.01" value="${x.amount}" required></label>
     <label class="f full">${esc(t('merchant'))}<input class="inp" id="e-merchant" name="merchant" value="${esc(x.merchant)}"></label>
-    <label class="f">${esc(t('category'))}<select class="inp" id="e-cat" name="category">${catOptions(x.category)}</select></label>
+    <label class="f">${esc(t('category'))}<select class="inp" id="e-cat" name="category">${catMoveOptions(x.category, x.toCardId)}</select></label>
     <label class="f">${esc(t('date'))}<input class="inp" id="e-date" name="date" type="date" value="${esc(x.date)}"></label>
     <label class="f full">${esc(t('card'))}<select class="inp" id="e-card" name="cardId">${cardOptions((cardOf(x) || {}).id)}</select></label>
-    <label class="f full">${esc(t('paid_to'))}<select class="inp" id="e-to" name="toCardId">${cardOptions(x.toCardId)}</select></label>
     <label class="f full">${esc(t('note'))}<input class="inp" id="e-note" name="note" value="${esc(x.note || '')}"></label>
     ${x.merchant ? `<label class="check full"><input type="checkbox" id="e-remember" name="remember" checked>${esc(t('remember_cat', { m: x.merchant }))}</label>` : ''}
     ${x.raw ? `<div class="full" style="font-size:12px;color:var(--muted);white-space:pre-wrap;background:var(--surface-2);padding:8px;border-radius:8px" dir="auto">${esc(x.raw)}</div>` : ''}
@@ -1571,7 +1679,7 @@ async function readSms() {
   S.reading = true; render();
   const td = todayStr(); const ids = new Set(S.tx.map(x => x.id));
   S.drafts = msgs.map(m => { const d = SmsParser.parseOne(m, td); d.dateGuessed = !SmsParser.parseDate(d.raw); d.id = 'sms-' + hash(d.raw.replace(/\s+/g, ' ')); d.dup = ids.has(d.id);
-    const a = autoCategory(d); d.category = a.cat; d.how = a.how; d.toCardId = a.to || ''; if (d.kind === 'salary' && !d.merchant) d.merchant = S.lang === 'ar' ? 'الراتب' : 'Salary'; d.on = !d.dup; const kc = cardForAccount(d.account); d.cardId = kc ? kc.id : ''; return d; });
+    const a = autoCategory(d); d.category = a.cat; d.how = a.how; d.toCardId = a.to || ''; if (d.dir === 'in' && findOutgoingPair({ ...d, cardId: '' })) { d.category = 'internal'; d.how = 'kind'; } if (d.kind === 'salary' && !d.merchant) d.merchant = S.lang === 'ar' ? 'الراتب' : 'Salary'; d.on = !d.dup; const kc = cardForAccount(d.account); d.cardId = kc ? kc.id : ''; if (d.dir === 'in' && !isMove(d.category) && findOutgoingPair(d)) d.category = 'internal'; const mm = d.amount != null ? findMarked(d) : null; d.mergeInto = mm ? mm.id : ''; return d; });
   await aiAssist(S.drafts);
   S.drafts.forEach(d => { if (d.amount == null) d.on = false; });
   S.reading = false; render();
@@ -1588,12 +1696,18 @@ window.HF_importSms = async items => {
     if (ids.has(d.id)) continue; ids.add(d.id);
     d.dateGuessed = !SmsParser.parseDate(d.raw);
     const a = autoCategory(d); d.category = a.cat; d.how = a.how; d.toCardId = a.to || '';
+    if (d.dir === 'in' && findOutgoingPair({ ...d, cardId: '' })) { d.category = 'internal'; d.how = 'kind'; }
     if (d.kind === 'salary' && !d.merchant) d.merchant = S.lang === 'ar' ? 'الراتب' : 'Salary';
     if (d.amount == null || d.kind === 'unknown') { d.on = d.amount != null; d.dup = false; const kc = cardForAccount(d.account); d.cardId = kc ? kc.id : ''; review.push(d); }
     else ok.push(d);
   }
   const cross = crossedBy(ok.map(d => ({ category: d.category, amount: +d.amount, date: d.date, dir: d.dir })));
-  let saved = 0; for (const d of ok) if (await put('tx', d.id, draftDoc(d, 'sms-auto'), true)) saved++;
+  let saved = 0;
+  for (const d of ok) {
+    if (d.dir === 'in' && !isMove(d.category) && findOutgoingPair(d)) d.category = 'internal';
+    const m = findMarked(d); if (m) { await mergeSms(m, d); continue; }
+    const doc = draftDoc(d, 'sms-auto'); if (await put('tx', d.id, doc, true)) { saved++; if (doc.toCardId) await pairIncoming(doc); }
+  }
   if (review.length) { S.drafts = review.concat(S.drafts); }
   if (saved) toast(t('auto_saved', { n: saved }));
   if (review.length) toast(t('auto_review', { n: review.length }));
@@ -1604,8 +1718,9 @@ async function saveDrafts() {
   const cross = crossedBy(sel.map(d => ({ category: d.category, amount: +d.amount, date: d.date, dir: d.dir })));
   let ok = 0;
   for (const d of sel) {
+    if (d.mergeInto) { const m = S.tx.find(y => y.id === d.mergeInto); if (m) { await mergeSms(m, d); ok++; continue; } }
     const doc = draftDoc(d, 'sms');
-    if (await put('tx', d.id, doc, true)) ok++;
+    if (await put('tx', d.id, doc, true)) { ok++; if (doc.toCardId) await pairIncoming(doc); }
     if ((d.userCat || d.toSet) && d.merchant) { const k = ruleId(d.merchant); if (k) await put('rules', k, clean({ category: d.category, merchant: d.merchant, toCardId: isMove(d.category) && d.toCardId ? d.toCardId : undefined }), true); }
   }
   toast(`${t('saved_ok')} · ${ok}`); S.drafts = []; S.smsText = ''; go('home'); showCrossed(cross);
@@ -1625,6 +1740,12 @@ document.addEventListener('click', async e => {
   if (ds.editTx != null) return modalTx(ds.editTx);
   if (ds.editPlan != null) return modalPlan(ds.editPlan);
   if (ds.step) { const s = S.steps.find(y => y.id === ds.step); if (s) { const n = { ...s, done: !s.done }; if (n.done) n.doneAt = todayStr(); else delete n.doneAt; await put('steps', s.id, strip(n), true); } return; }
+  if (ds.pay && el.tagName === 'BUTTON') { const [k, id, date] = ds.pay.split('|'); return modalPay(k, id, date); }
+  if ('planBudgets' in ds) { for (const [cid, b] of Object.entries(PLAN_BUDGETS)) await put('budgets', cid, clean({ ...(S.budgets[cid] || {}), ...b, id: undefined }), true); return toast(t('plan_budgets_done')); }
+  if (ds.combine) { const id = ds.combine; const cur = new Set(((S.budgets[id] || {}).also) || []);
+    const opts = OUT_CATS.filter(k => k.id !== id && !(((S.budgets[k.id] || {}).also || []).length) && (!budgetHost(k.id) || budgetHost(k.id) === id));
+    return openModal(`${mh(t('combine_title') + ': ' + catName(id))}<p style="margin:0 0 10px;color:var(--ink-2);font-size:14px">${esc(t('combine_sub'))}</p><form id="combineForm" data-id="${id}"><div class="list">${opts.map(k => `<label class="check" style="padding:8px 0"><input type="checkbox" name="c_${k.id}" value="${k.id}" ${cur.has(k.id) ? 'checked' : ''}>${esc(k[S.lang])}</label>`).join('')}</div>${foot('')}</form>`); }
+  if (ds.mark) { const [k, id, date] = ds.mark.split('|'); el.disabled = true; await markPaid(k, id, date); toast(t('marked')); return; }
   if (ds.planOpen) { S.planOpen = S.planOpen === ds.planOpen ? '' : ds.planOpen; return render(); }
   if (ds.planDone || ds.planUndo) { const it = S.plan.find(y => y.id === (ds.planDone || ds.planUndo)); if (it) { const n = { ...it }; if (ds.planDone) { n.status = 'done'; n.doneAt = todayStr(); } else { delete n.status; delete n.doneAt; } await put('plan', it.id, strip(n), true); } return; }
   if (ds.editCard != null) return modalCard(ds.editCard);
@@ -1651,7 +1772,6 @@ document.addEventListener('click', async e => {
   if (ds.debtPay) {
     const b = S.debts.find(x => x.id === ds.debtPay); if (!b) return;
     const amt = Math.min(b.installment || b.remaining, b.remaining);
-    await put('tx', newId('t'), clean({ date: todayStr(), time: '', amount: amt, dir: 'out', merchant: b.name, category: 'installments', source: 'manual', createdAt: new Date().toISOString() }), true);
     await put('debts', b.id, strip({ ...b, remaining: Math.max(0, Math.round((b.remaining - amt) * 100) / 100), nextDate: b.nextDate ? addMonths(b.nextDate, 1) : '' }), true);
     return toast(t('payment_logged'));
   }
@@ -1686,14 +1806,14 @@ document.addEventListener('change', async e => {
   const el = e.target, ds = el.dataset;
   if (ds.d != null) { const d = S.drafts[+ds.d]; if (!d) return; const k = ds.k;
     d[k] = k === 'on' ? el.checked : k === 'amount' ? (el.value === '' ? null : +el.value) : el.value;
-    if (k === 'category') { d.userCat = true; d.how = 'user'; }
+    if (k === 'category') { const pc = parseCat(el.value); d.category = pc.category; d.toCardId = pc.toCardId; if (pc.toCardId) d.toSet = true; d.userCat = true; d.how = 'user'; }
     if (k === 'cardId') d.cardSet = true;
     if (k === 'toCardId') d.toSet = true;
     if (k === 'dir') { const a = autoCategory({ ...d, kind: d.dir === 'in' ? 'transfer_in' : d.kind }); if (!d.userCat) { d.category = a.cat; } }
     return render(); }
   if (ds.f) { S.f[ds.f] = el.type === 'checkbox' ? el.checked : el.value; return render(); }
   if (ds.ins != null) { S.insCycle = el.value; S.aiErr = ''; return render(); }
-  if (ds.budget) { const v = Math.max(0, +el.value || 0); if (v) await put('budgets', ds.budget, { limit: v }, true); else await del('budgets', ds.budget); return; }
+  if (ds.budget) { const v = Math.max(0, +el.value || 0); const prev = { ...(S.budgets[ds.budget] || {}) }; delete prev.id; if (v) await put('budgets', ds.budget, clean({ ...prev, limit: v }), true); else await del('budgets', ds.budget); return; }
   if (ds.set) { S.settings[ds.set] = Math.max(0, +el.value || 0); if (ds.set === 'warnAt') S.settings.warnAt = Math.min(100, Math.max(50, S.settings.warnAt || 80)); if (ds.set === 'payday') S.settings.payday = Math.min(31, Math.max(1, S.settings.payday || 25)); _sal = null; await saveSettings(); return render(); }
   if (el.id === 'importFile' && el.files && el.files[0]) { try { const json = JSON.parse(await el.files[0].text()); const n = await window.HF.importAll(json); toast(t('imported', { n })); } catch (x) { toast(t('save_fail')); } el.value = ''; return; }
   if (ds.acc) { S.settings.accounts = { ...(S.settings.accounts || {}), [ds.acc]: el.value.trim() }; await saveSettings(); return; }
@@ -1701,20 +1821,22 @@ document.addEventListener('change', async e => {
 document.addEventListener('submit', async e => {
   e.preventDefault(); const f = e.target; const v = fd(f); const id = f.dataset.id;
   if (f.id === 'manualForm') {
-    const ntx = { date: v.date, time: v.date === todayStr() ? nowTs().slice(11) : '', amount: Math.abs(+v.amount), dir: v.dir, merchant: v.merchant, category: v.category, note: v.note || undefined, cardId: v.cardId || undefined, source: 'manual', createdAt: new Date().toISOString() };
+    const pcm = parseCat(v.category);
+    const ntx = { date: v.date, time: v.date === todayStr() ? nowTs().slice(11) : '', amount: Math.abs(+v.amount), dir: v.dir, merchant: v.merchant, category: pcm.category, toCardId: pcm.toCardId || undefined, note: v.note || undefined, cardId: v.cardId || undefined, source: 'manual', createdAt: new Date().toISOString() };
     const cross = crossedBy([ntx]);
-    await put('tx', newId('t'), clean(ntx));
+    await put('tx', newId('t'), clean(ntx)); if (ntx.toCardId) await pairIncoming(ntx);
     f.reset(); f.querySelector('#m-date').value = todayStr(); render(); showCrossed(cross); return;
   }
   if (f.id === 'txForm') {
     const x = S.tx.find(y => y.id === id); if (!x) return;
-    const nx = { ...x, dir: v.dir, amount: Math.abs(+v.amount), merchant: v.merchant, category: v.category, date: v.date, note: v.note || undefined };
+    const pce = parseCat(v.category); v.category = pce.category;
+    const nx = { ...x, dir: v.dir, amount: Math.abs(+v.amount), merchant: v.merchant, category: pce.category, date: v.date, note: v.note || undefined };
     if (nx.category !== 'other' && nx.category !== 'other_in') delete nx.review;
     if ((v.cardId || '') !== ((cardOf(x) || {}).id || '')) nx.cardId = v.cardId || 'none';
-    if (isMove(nx.category) && v.toCardId) nx.toCardId = v.toCardId; else delete nx.toCardId;
+    if (isMove(nx.category) && pce.toCardId) nx.toCardId = pce.toCardId; else if (!isMove(nx.category)) delete nx.toCardId;
     const delta = (nx.dir === 'out' ? nx.amount : 0) - (x.dir === 'out' ? x.amount : 0);
     const cross = nx.category !== x.category || delta > 0 ? crossedBy([{ category: nx.category, amount: nx.category !== x.category ? nx.amount : delta, date: nx.date, dir: nx.dir }]) : [];
-    await put('tx', id, strip(nx));
+    await put('tx', id, strip(nx)); if (nx.toCardId) await pairIncoming(nx);
     if (v.remember && v.merchant && (v.category !== x.category || (nx.toCardId || '') !== (x.toCardId || ''))) {
       const k = ruleId(v.merchant);
       if (k) { await put('rules', k, clean({ category: v.category, merchant: v.merchant, toCardId: nx.toCardId }), true);
@@ -1742,9 +1864,17 @@ document.addEventListener('submit', async e => {
     else if (v.balance !== '' && (prev == null || Math.abs(+v.balance - prev) > 0.004)) { c.balance = +v.balance; c.balanceAt = nowTs(); }
     const cid = id || newId('c');
     if (c.main) for (const o of S.cards) if (o.id !== cid && o.main) await put('cards', o.id, strip({ ...o, main: false }), true);
-    await put('cards', cid, clean(c)); return closeModal();
+    await put('cards', cid, clean(c)); closeModal(); if (c.balanceAt === nowTs() && id) askAlreadyPaid(); return;
   }
-  if (f.id === 'amtForm' && f.dataset.card) { const k = S.cards.find(y => y.id === f.dataset.card); if (k) await put('cards', k.id, strip({ ...k, balance: +v.amount, balanceAt: nowTs() })); return closeModal(); }
+  if (f.id === 'amtForm' && f.dataset.card) { const k = S.cards.find(y => y.id === f.dataset.card); if (k) await put('cards', k.id, strip({ ...k, balance: +v.amount, balanceAt: nowTs() })); closeModal(); return askAlreadyPaid(); }
+  if (f.id === 'payForm') {
+    const [k, id, date] = f.dataset.pay.split('|'); const x = payItem(k, id, date) || { name: '' };
+    if (v.record) { const pc = parseCat(v.category); const ntx = clean({ date: v.date, time: v.date === todayStr() ? nowTs().slice(11) : '', amount: Math.abs(+v.amount), dir: 'out', merchant: x.name, category: pc.category, toCardId: pc.toCardId || undefined, cardId: v.cardId || undefined, source: 'mark', createdAt: new Date().toISOString() });
+      const cross = crossedBy([ntx]); await put('tx', newId('t'), ntx, true); if (ntx.toCardId) await pairIncoming(ntx); await markPaid(k, id, date); closeModal(); toast(t('marked')); return showCrossed(cross); }
+    await markPaid(k, id, date); closeModal(); return toast(t('marked'));
+  }
+  if (f.id === 'combineForm') { const id = f.dataset.id; const also = [...f.querySelectorAll('input:checked')].map(i => i.value); const b = { ...(S.budgets[id] || { limit: 0 }) }; delete b.id; b.also = also; if (!also.length) delete b.also; await put('budgets', id, clean(b), true); return closeModal(); }
+  if (f.id === 'paidForm') { const vals = [...f.querySelectorAll('input[type=checkbox]:checked')].map(i => i.value); for (const s of vals) { const [k, id, date] = s.split('|'); await markPaid(k, id, date); } closeModal(); if (vals.length) toast(t('marked')); return; }
   if (f.id === 'goalForm') { await put('goals', id || newId('g'), clean({ name: v.name.trim(), target: +v.target, saved: +v.saved || 0, deadline: v.deadline || undefined })); return closeModal(); }
   if (f.id === 'debtForm') { await put('debts', id || newId('d'), clean({ name: v.name.trim(), kind: v.kind, total: +v.total, remaining: +v.remaining, installment: +v.installment, nextDate: v.nextDate || undefined })); return closeModal(); }
   if (f.id === 'amtForm' && f.dataset.goal) { const g = S.goals.find(y => y.id === f.dataset.goal); if (g) await put('goals', g.id, strip({ ...g, saved: Math.round(((g.saved || 0) + (+v.amount || 0)) * 100) / 100 })); return closeModal(); }
